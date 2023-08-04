@@ -5,8 +5,7 @@ module.exports = {
     watch: true,
 
     entry: {
-        // theme: path.resolve("src/theme.jsx")
-        theme: path.resolve("src/scripts/script.js")
+        theme: path.resolve("src/theme.jsx")
     },
 
     output: {
