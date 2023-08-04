@@ -3,6 +3,7 @@ import mobro from "mobro";
 
 
 import Text from "theme/widgets/Text";
+import script from "theme/script";
 
 mobro.hooks.addWidget({
     name: "text",
