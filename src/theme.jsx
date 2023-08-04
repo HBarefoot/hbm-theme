@@ -1,8 +1,3 @@
-import React from "react";
-import mobro from "mobro";
-
-
-import { charts } from 'chart.js'
 var bytes = require('bytes');
 var convert = require('convert-units')
 
