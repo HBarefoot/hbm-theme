@@ -1,30 +1,35 @@
 {
-  "name": "mobro-theme-skeleton",
-  "description": "Skeleton for mobro themes",
-  "author": "Mod Bros",
-  "repository": "https://github.com/ModBros/mobro-theme-skeleton",
-  "license": "GPL-3.0-or-later",
+  "name": "mobro-theme-dubbadhar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode=development",
-    "build": "webpack --mode=production"
+    "dev": "webpack --openssl-legacy-provider --mode=development",
+    "build": "webpack --openssl-legacy-provider --mode=production"
   },
-  "devDependencies": {
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ModBros/mobro-theme-dubbadhar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ModBros/mobro-theme-dubbadhar/issues"
+  },
+  "homepage": "https://github.com/ModBros/mobro-theme-dubbadhar#readme",
+  "dependencies": {
     "@babel/core": "*",
     "@babel/plugin-proposal-class-properties": "*",
-    "@babel/plugin-transform-runtime": "*",
-    "@babel/preset-env": "*",
-    "@babel/preset-react": "*",
     "babel-loader": "*",
-    "core-js": "^*",
+    "bytes": "*",
+    "chart.js": "*",
+    "convert-units": "*",
+    "copy-webpack-plugin": "*",
     "css-loader": "*",
-    "node-sass": "*",
+    "mini-css-extract-plugin": "*",
     "path": "*",
-    "regenerator-runtime": "*",
-    "sass-loader": "*",
     "style-loader": "*",
     "webpack": "*",
     "webpack-cli": "*"
-  },
-  "dependencies": {
   }
 }

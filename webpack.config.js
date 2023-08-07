@@ -1,11 +1,13 @@
 const path = require("path");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     devtool: "source-map",
     watch: true,
 
     entry: {
-        theme: path.resolve("src/theme.jsx")
+        script: path.resolve("src/js", "script.js"),
     },
 
     output: {
@@ -17,36 +19,32 @@ module.exports = {
         modules: [
             path.resolve(__dirname, "src"),
             path.resolve(__dirname, "node_modules")
-        ],
-
-        extensions: ["*", ".js", ".jsx"],
-
-        alias: {
-            theme: path.resolve(__dirname, "src/"),
-            "core-js/es6": "core-js/es"
-        }
-    },
-
-    externals: {
-        "react": "React",
-        "react-dom": "ReactDOM",
-        "mobro": "mobro"
+        ]
     },
 
     module: {
         rules: [{
-            test: /\.(js|jsx)$/,
+            test: /\.js$/,
             exclude: /(node_modules)/,
             use: {
                 loader: "babel-loader",
                 options: {
-                    plugins: ['@babel/plugin-transform-runtime', '@babel/plugin-proposal-class-properties'],
-                    presets: ["@babel/preset-env", "@babel/react"]
+                    plugins: ['@babel/plugin-proposal-class-properties']
                 }
             }
-        }, {
-            test: /\.scss$/,
-            use: ["style-loader", "css-loader", "sass-loader"]
+        },{
+            test: /\.css$/,
+            use: [
+                MiniCssExtractPlugin.loader,
+                {
+                    loader: 'css-loader', options: {}
+                },{
+                    loader: 'sass-loader', options:  {}
+                }
+            ],
         }]
-    }
+    },
+    plugins: [
+        new CopyWebpackPlugin([{ from: 'src/css', to: './css' }])
+    ]
 };
